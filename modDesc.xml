@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modDesc descVersion="105">
+  <author>NX Modding</author>	
+  <version>1.0.0.0</version>
+
+    <title>
+        <en>NX Vehicle Mileage HUD</en>
+    </title>
+
+    <description>
+        <en><![CDATA[Displays vehicle mileage (distance traveled) above the working hours display. Mileage is tracked per vehicle and saved automatically.]]></en>
+    </description>
+
+    <iconFilename>icon_NXMileageHUD.dds</iconFilename>
+
+    <extraSourceFiles>
+        <sourceFile filename="scripts/NXMileageHUD.lua"/>
+    </extraSourceFiles>
+
+    <multiplayer supported="true"/>
+</modDesc>
