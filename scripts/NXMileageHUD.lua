@@ -85,6 +85,7 @@ local function saveMileage()
             local key = string.format("mileage.vehicle(%d)", i)
             setXMLString(xmlFile, key .. "#id", vehicleId)
             setXMLFloat(xmlFile, key .. "#distance", data.distance or 0.0)
+            setXMLBool(xmlFile, key .. "#isMetric", data.isMetric or true)
             i = i + 1
         end
         saveXMLFile(xmlFile)
@@ -110,10 +111,12 @@ local function loadMileage()
             
             local vehicleId = getXMLString(xmlFile, key .. "#id")
             local distance = getXMLFloat(xmlFile, key .. "#distance")
+            local isMetric = getXMLBool(xmlFile, key .. "#isMetric")
             
             if vehicleId and distance then
                 S.mileageData[vehicleId] = {
-                    distance = distance
+                    distance = distance,
+                    isMetric = isMetric ~= nil and isMetric or true
                 }
             end
             i = i + 1
@@ -143,16 +146,10 @@ function NXMileageHUD:update(dt)
         S.saveTimer = 0
     end
 
-    S.accRefresh = (S.accRefresh or 0) + dt
-    if S.accRefresh < 50.0 then return end
-    local dtSec = S.accRefresh / 1000.0
-    S.accRefresh = 0
-
     local veh = getCurrentVehicle()
     if not veh then
         S.visible = false
         S.lastVehicle = nil
-        S.lastUpdateTime = nil
         return
     end
 
@@ -166,23 +163,44 @@ function NXMileageHUD:update(dt)
 
     if not S.mileageData then S.mileageData = {} end
     if not S.mileageData[vehicleId] then
-        S.mileageData[vehicleId] = { distance = 0.0 }
+        S.mileageData[vehicleId] = { distance = 0.0, isMetric = getIsMetric() }
     end
 
-    local speedKmh = getSpeedKmh(veh)
-    if speedKmh > 0.1 then
-        local distanceKm = (speedKmh * dtSec) / 3600.0
-        S.mileageData[vehicleId].distance = S.mileageData[vehicleId].distance + distanceKm
-    end
-
-    local totalKm = S.mileageData[vehicleId].distance
     local isMetric = getIsMetric()
     
+    if S.mileageData[vehicleId].isMetric ~= isMetric then
+    
+        if isMetric then
+         
+            S.mileageData[vehicleId].distance = S.mileageData[vehicleId].distance * 1.60934
+        else
+  
+            S.mileageData[vehicleId].distance = S.mileageData[vehicleId].distance / 1.60934
+        end
+ 
+        S.mileageData[vehicleId].isMetric = isMetric
+    end
+    
+
+    if veh.lastMovedDistance and veh.lastMovedDistance > 0.001 then
+        if isMetric then
+            -- Store in kilometers
+            local distanceKm = veh.lastMovedDistance / 1000.0
+            S.mileageData[vehicleId].distance = S.mileageData[vehicleId].distance + distanceKm
+        else
+            -- Store in miles
+            local distanceMiles = veh.lastMovedDistance / 1609.34
+            S.mileageData[vehicleId].distance = S.mileageData[vehicleId].distance + distanceMiles
+        end
+    end
+
+
+    local totalDistance = S.mileageData[vehicleId].distance
+    
     if isMetric then
-        S.text = string.format("%07d km", math.floor(totalKm))
+        S.text = string.format("%07d km", math.floor(totalDistance))
     else
-        local totalMiles = totalKm / 1.60934
-        S.text = string.format("%07d mi", math.floor(totalMiles))
+        S.text = string.format("%07d mi", math.floor(totalDistance))
     end
     
     S.visible = true
