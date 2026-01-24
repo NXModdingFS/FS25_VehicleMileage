@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <modDesc descVersion="105">
     <author>NX Modding</author> 
-    <version>1.0.0.4</version>
+    <version>1.0.0.3</version>
     <title>
         <en>NX Vehicle Mileage</en>
         <de>NX Fahrzeug Kilometerstand</de>
@@ -57,4 +57,5 @@ Fonctionnalités:
     </extraSourceFiles>
     
     <multiplayer supported="true"/>
+
 </modDesc>
