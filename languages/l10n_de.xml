@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<l10n>
+    <translationContributors>NX Modding</translationContributors>
+    
+    <texts>
+        <!-- Action binding text -->
+        <text name="input_NX_MILEAGE_TOGGLE_MODE" text="Kilometerstandanzeige umschalten" />
+        
+        <!-- In-game messages -->
+        <text name="nx_mileage_mode_mileage" text="Kilometerstand" />
+        <text name="nx_mileage_mode_trip" text="Tageskilometerzähler" />
+        <text name="nx_mileage_trip_reset" text="Tageskilometerzähler zurückgesetzt" />
+    </texts>
+</l10n>

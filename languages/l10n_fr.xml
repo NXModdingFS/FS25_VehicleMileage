@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<l10n>
+    <translationContributors>NX Modding</translationContributors>
+    
+    <texts>
+        <!-- Action binding text -->
+        <text name="input_NX_MILEAGE_TOGGLE_MODE" text="Basculer l'affichage du kilométrage" />
+        
+        <!-- In-game messages -->
+        <text name="nx_mileage_mode_mileage" text="Kilométrage" />
+        <text name="nx_mileage_mode_trip" text="Compteur journalier" />
+        <text name="nx_mileage_trip_reset" text="Compteur journalier réinitialisé" />
+    </texts>
+</l10n>

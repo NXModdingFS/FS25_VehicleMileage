@@ -1,25 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <modDesc descVersion="105">
-  <author>NX Modding</author>	
-  <version>1.0.0.1</version>
-
+    <author>NX Modding</author> 
+    <version>1.0.0.4</version>
     <title>
         <en>NX Vehicle Mileage</en>
         <de>NX Fahrzeug Kilometerstand</de>
         <fr>NX Kilométrage Du Véhicule</fr>
     </title>
-
     <description>
-        <en><![CDATA[Displays vehicle mileage (distance traveled) above the working hours display. Mileage is tracked per vehicle and saved automatically.]]></en>
-        <de><![CDATA[Zeigt den Kilometerstand des Fahrzeugs (gefahrene Strecke) über der Betriebsstundenanzeige an. Der Kilometerstand wird pro Fahrzeug verfolgt und automatisch gespeichert.]]></de>
-        <fr><![CDATA[Affiche le kilométrage du véhicule (distance parcourue) au-dessus de l'affichage des heures de travail. Le kilométrage est suivi par véhicule et sauvegardé automatiquement.]]></fr>
+        <en><![CDATA[
+Displays vehicle odometer and trip meter above the working hours display.
+Features:
+- Separate odometer (total distance) and trip meter
+- Automatic mileage tracking per vehicle
+- Mileage saved automatically
+- Supports metric (km) and imperial (mi) units
+- Press O to toggle between odometer and trip meter
+- Hold O for 1 second to reset trip meter
+]]></en>
+        <de><![CDATA[
+Zeigt Fahrzeug-Kilometerzähler über der Betriebsstundenanzeige an.
+Funktionen:
+- Separater Kilometerzähler pro Fahrzeug
+- Automatische Speicherung
+- Unterstützt metrische und imperiale Einheiten
+- O drücken zum Umschalten zwischen Kilometerzähler und Tageskilometerzähler
+- O 1 Sekunde halten zum Zurücksetzen des Tageskilometerzählers
+]]></de>
+        <fr><![CDATA[
+Affiche l'odomètre du véhicule au-dessus de l'affichage des heures de travail.
+Fonctionnalités:
+- Suivi automatique par véhicule
+- Sauvegarde automatique
+- Prise en charge métrique et impériale
+- Appuyez sur O pour basculer entre l'odomètre et le compteur journalier
+- Maintenez O pendant 1 seconde pour réinitialiser le compteur journalier
+]]></fr>
     </description>
-
     <iconFilename>icon_NXMileageHUD.dds</iconFilename>
+    
+    <actions>
+        <action name="NX_MILEAGE_TOGGLE_MODE" category="VEHICLE" axisType="HALF" />
+    </actions>
+    
+    <inputBinding>
+        <actionBinding action="NX_MILEAGE_TOGGLE_MODE">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_o" />
+        </actionBinding>
+    </inputBinding>
 
+    <l10n filenamePrefix="languages/l10n"/>
+    
     <extraSourceFiles>
         <sourceFile filename="scripts/NXMileageHUD.lua"/>
+        <sourceFile filename="scripts/RegisterPlayerActionEvents.lua"/>
     </extraSourceFiles>
-
+    
     <multiplayer supported="true"/>
 </modDesc>

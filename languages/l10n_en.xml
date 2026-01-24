@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<l10n>
+    <translationContributors>NX Modding</translationContributors>
+    
+    <texts>
+        <!-- Action binding text -->
+        <text name="input_NX_MILEAGE_TOGGLE_MODE" text="Toggle Mileage Display" />
+        
+        <!-- In-game messages -->
+        <text name="nx_mileage_mode_mileage" text="Mileage" />
+        <text name="nx_mileage_mode_trip" text="Trip Meter" />
+        <text name="nx_mileage_trip_reset" text="Trip meter reset" />
+    </texts>
+</l10n>
