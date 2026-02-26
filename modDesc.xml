@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <modDesc descVersion="105">
     <author>NX Modding</author> 
-    <version>1.0.0.3</version>
+    <version>1.0.0.1</version>
     <title>
-        <en>NX Vehicle Mileage</en>
-        <de>NX Fahrzeug Kilometerstand</de>
-        <fr>NX Kilométrage Du Véhicule</fr>
+        <en>Vehicle Mileage</en>
+        <de>Fahrzeug Kilometerstand</de>
+        <fr>Kilométrage Du Véhicule</fr>
     </title>
     <description>
         <en><![CDATA[
@@ -37,7 +37,7 @@ Fonctionnalités:
 - Maintenez O pendant 1 seconde pour réinitialiser le compteur journalier
 ]]></fr>
     </description>
-    <iconFilename>icon_NXMileageHUD.dds</iconFilename>
+    <iconFilename>icon_VehicleMileage.dds</iconFilename>
     
     <actions>
         <action name="NX_MILEAGE_TOGGLE_MODE" category="VEHICLE" axisType="HALF" />
@@ -48,14 +48,13 @@ Fonctionnalités:
             <binding device="KB_MOUSE_DEFAULT" input="KEY_o" />
         </actionBinding>
     </inputBinding>
-
     <l10n filenamePrefix="languages/l10n"/>
     
     <extraSourceFiles>
-        <sourceFile filename="scripts/NXMileageHUD.lua"/>
+        <sourceFile filename="scripts/VehicleMileageHUD.lua"/>
         <sourceFile filename="scripts/RegisterPlayerActionEvents.lua"/>
+        <sourceFile filename="scripts/MileageSyncEvent.lua"/>
     </extraSourceFiles>
     
     <multiplayer supported="true"/>
-
 </modDesc>
