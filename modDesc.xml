@@ -9,32 +9,73 @@
     </title>
     <description>
         <en><![CDATA[
-Displays vehicle odometer and trip meter above the working hours display.
-Features:
-- Separate odometer (total distance) and trip meter
+
+
+A standalone mod that adds a mileage display to vehicles in Farming Simulator 25. The mileage is displayed above the hour meter and tracks the total distance traveled by each vehicle. The mod also includes a trip meter that can be reset independently of the odometer.
+
+Github: https://github.com/NXModdingFS/FS25_VehicleMileage
+
+Changelog:
+
+v1.0.0.0: Initial release
+- Separate Mileage (total distance) and trip meter
 - Automatic mileage tracking per vehicle
 - Mileage saved automatically
 - Supports metric (km) and imperial (mi) units
-- Press O to toggle between odometer and trip meter
+- Press O to toggle between Mileage and trip meter
 - Hold O for 1 second to reset trip meter
+
+v1.0.0.1: Added Support for Multiplayer
+- Fixed a bug where the trip meter would reset when switching vehicles in multiplayer
+- Added synchronization of mileage data between clients in multiplayer
+- Vehicle mileage now stored in vehicle.XML rather that an additional XML file
+
 ]]></en>
         <de><![CDATA[
-Zeigt Fahrzeug-Kilometerzähler über der Betriebsstundenanzeige an.
-Funktionen:
-- Separater Kilometerzähler pro Fahrzeug
-- Automatische Speicherung
-- Unterstützt metrische und imperiale Einheiten
-- O drücken zum Umschalten zwischen Kilometerzähler und Tageskilometerzähler
+
+
+Ein eigenständiges Mod, das Farming Simulator 25-Fahrzeugen eine Kilometeranzeige hinzufügt. Der Kilometerstand wird über der Betriebsstundenanzeige angezeigt und verfolgt die gesamte zurückgelegte Strecke jedes Fahrzeugs. Das Mod enthält außerdem einen Tageskilometerzähler, der unabhängig vom Kilometerzähler zurückgesetzt werden kann.
+
+Github: https://github.com/NXModdingFS/FS25_VehicleMileage
+
+Changelog:
+
+v1.0.0.0: Erstveröffentlichung
+- Separater Kilometerstand (Gesamtstrecke) und Tageskilometerzähler
+- Automatische Kilometerverfolgung pro Fahrzeug
+- Kilometerstand wird automatisch gespeichert
+- Unterstützt metrische (km) und imperiale (mi) Einheiten
+- O drücken zum Umschalten zwischen Kilometerstand und Tageskilometerzähler
 - O 1 Sekunde halten zum Zurücksetzen des Tageskilometerzählers
+
+v1.0.0.1: Multiplayer-Unterstützung hinzugefügt
+- Fehler behoben, bei dem der Tageskilometerzähler beim Fahrzeugwechsel im Multiplayer zurückgesetzt wurde
+- Synchronisierung der Kilometerdaten zwischen Clients im Multiplayer hinzugefügt
+- Fahrzeugkilometerstand wird jetzt in vehicle.xml statt in einer zusätzlichen XML-Datei gespeichert
+
 ]]></de>
         <fr><![CDATA[
-Affiche l'odomètre du véhicule au-dessus de l'affichage des heures de travail.
-Fonctionnalités:
-- Suivi automatique par véhicule
-- Sauvegarde automatique
-- Prise en charge métrique et impériale
-- Appuyez sur O pour basculer entre l'odomètre et le compteur journalier
-- Maintenez O pendant 1 seconde pour réinitialiser le compteur journalier
+
+
+Un mod autonome qui ajoute un affichage du kilométrage aux véhicules dans Farming Simulator 25. Le kilométrage est affiché au-dessus du compteur d'heures et suit la distance totale parcourue par chaque véhicule. Le mod inclut également un compteur de trajet qui peut être réinitialisé indépendamment de l'odomètre.
+
+Github: https://github.com/NXModdingFS/FS25_VehicleMileage
+
+Changelog:
+
+v1.0.0.0: Version initiale
+- Kilométrage (distance totale) et compteur de trajet séparés
+- Suivi automatique du kilométrage par véhicule
+- Kilométrage sauvegardé automatiquement
+- Prise en charge des unités métriques (km) et impériales (mi)
+- Appuyez sur O pour basculer entre le kilométrage et le compteur de trajet
+- Maintenez O pendant 1 seconde pour réinitialiser le compteur de trajet
+
+v1.0.0.1: Ajout de la prise en charge du multijoueur
+- Correction d'un bug où le compteur de trajet se réinitialisait lors du changement de véhicule en multijoueur
+- Ajout de la synchronisation des données de kilométrage entre les clients en multijoueur
+- Le kilométrage du véhicule est maintenant stocké dans vehicle.xml plutôt que dans un fichier XML supplémentaire
+
 ]]></fr>
     </description>
     <iconFilename>icon_VehicleMileage.dds</iconFilename>
