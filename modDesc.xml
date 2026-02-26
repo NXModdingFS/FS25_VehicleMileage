@@ -50,11 +50,12 @@ Fonctionnalités:
     </inputBinding>
     <l10n filenamePrefix="languages/l10n"/>
     
-    <extraSourceFiles>
-        <sourceFile filename="scripts/VehicleMileageHUD.lua"/>
-        <sourceFile filename="scripts/RegisterPlayerActionEvents.lua"/>
-        <sourceFile filename="scripts/MileageSyncEvent.lua"/>
-    </extraSourceFiles>
+<extraSourceFiles>
+    <sourceFile filename="scripts/NXMileageTripResetEvent.lua"/>
+    <sourceFile filename="scripts/NXMileageSpec.lua"/>
+    <sourceFile filename="scripts/VehicleMileageHUD.lua"/>
+    <sourceFile filename="scripts/RegisterPlayerActionEvents.lua"/>
+</extraSourceFiles>
     
     <multiplayer supported="true"/>
 </modDesc>
